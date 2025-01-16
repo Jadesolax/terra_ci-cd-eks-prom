@@ -25,7 +25,7 @@ module "eks_cluster" {
 }
 
 module "vpc_cni" {
-  source  = "terraform-aws-modules/eks/aws//modules/aws-vpc-cni"
+  source  = "terraform-aws-modules/eks/aws//modules/vpc-cni"
   version = "20.31.6"
 
   cluster_name = module.eks_cluster.cluster_name
@@ -68,4 +68,3 @@ module "monitoring_stack" {
   enable_grafana    = true
   enable_alertmanager = true
 }
-
